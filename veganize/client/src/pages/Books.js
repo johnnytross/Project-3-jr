@@ -25,20 +25,24 @@ class Books extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
+        <Col size="md-2">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h3>More stuff here...</h3>
+            </Jumbotron>
+            
+          </Col>
+          <Col size="md-8">
+            <Jumbotron>
+              <h1>Veganize A Recipe!</h1>
             </Jumbotron>
             <form>
-              <Input name="title" placeholder="Title (required)" />
-              <Input name="author" placeholder="Author (required)" />
-              <TextArea name="synopsis" placeholder="Synopsis (Optional)" />
-              <FormBtn>Submit Book</FormBtn>
+              <Input name="recipe" placeholder="Search by ingredients, recipe name, or keyword..." />
+              <FormBtn>Search</FormBtn>
             </form>
           </Col>
-          <Col size="md-6 sm-12">
+          <Col size="md-2">
             <Jumbotron>
-              <h1>Books On My List</h1>
+              <h3>Saved Recipes</h3>
             </Jumbotron>
             {this.state.books.length ? (
               <List>
@@ -54,7 +58,7 @@ class Books extends Component {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h5>No recipes found</h5>
             )}
           </Col>
         </Row>
