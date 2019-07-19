@@ -5,6 +5,7 @@ import DeleteBtn from "../components/DeleteBtn";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import asios from 'axios'
 
 class Books extends Component {
   state = {
@@ -21,6 +22,24 @@ class Books extends Component {
       .catch(err => console.log(err));
   };
 
+  handleChange = (e) => {
+    console.log(e)
+    console.log(e.target)
+    const {name, value} = e.target
+    console.log(name)
+    console.log(value)
+    this.setState({[name]: value})
+  }
+
+  getRecipes = (e) =>{
+    e.preventDefault();
+    //axios get recipes here
+    
+    console.log(this.state.recipe)
+
+  }
+
+
   render() {
     return (
       <Container fluid>
@@ -36,8 +55,8 @@ class Books extends Component {
               <h1>Veganize A Recipe!</h1>
             </Jumbotron>
             <form>
-              <Input name="recipe" placeholder="Search by ingredients, recipe name, or keyword..." />
-              <FormBtn>Search</FormBtn>
+              <Input name="recipe" onChange={this.handleChange} value={this.state.recipe} placeholder="Search by ingredients, recipe name, or keyword..." />
+              <FormBtn recipeSubmit={this.getRecipes} >Search</FormBtn>
             </form>
           </Col>
           <Col size="md-2">
