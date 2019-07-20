@@ -9,8 +9,7 @@ import axios from 'axios'
 
 class Books extends Component {
   state = {
-    books: [],
-    search: []
+    books: []
   };
 
   componentDidMount() {
@@ -37,9 +36,14 @@ class Books extends Component {
     e.preventDefault();
     //axios get recipes here
     
-    console.log("getRecipes: "+this.state.recipe)
-    
-    axios.get(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4`)
+    console.log("getRecipes: "+this.state.recipeName)
+    const originSearch = this.state.recipeName;
+    const search = originSearch.split(" ").join("+");
+    console.log(search);
+
+    const recipeAPI = `https://api.edamam.com/search?q=${search}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4`
+    console.log(recipeAPI);
+    axios.get(recipeAPI)
       .then(res => this.setState({ recipe: res.data }))
       .catch(err => console.log(err));
     
@@ -60,7 +64,7 @@ class Books extends Component {
               <h1>Veganize A Recipe!</h1>
             </Jumbotron>
             <form>
-              <Input name="recipe" onChange={this.handleChange} value={this.state.recipe} placeholder="Search by ingredients, recipe name, or keyword..." />
+              <Input name="recipeName" onChange={this.handleChange} value={this.state.recipeName} placeholder="Search by ingredients, recipe name, or keyword..." />
               <FormBtn recipeSubmit={this.getRecipes} >Search</FormBtn>
             </form>
           </Col>
