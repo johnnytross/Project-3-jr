@@ -26,14 +26,15 @@ class Books extends Component {
   handleChange = (e) => {
     console.log(e)
     console.log(e.target)
-    const {name, value} = e.target
+    const { name, value } = e.target
     console.log(name)
     console.log(value)
-    this.setState({[name]: value})
+    this.setState({ [name]: value })
   }
 
-  getRecipes = (e) =>{
+  getRecipes = (e) => {
     e.preventDefault();
+
     //axios get recipes here
     
     console.log("getRecipes: "+this.state.recipeName)
@@ -53,11 +54,11 @@ class Books extends Component {
     return (
       <Container fluid>
         <Row>
-        <Col size="md-2">
+          <Col size="md-2">
             <Jumbotron>
               <h3>More stuff here...</h3>
             </Jumbotron>
-            
+
           </Col>
           <Col size="md-8">
             <Jumbotron>
@@ -86,8 +87,8 @@ class Books extends Component {
                 ))}
               </List>
             ) : (
-              <h5>No recipes found</h5>
-            )}
+                <h5>No recipes found</h5>
+              )}
           </Col>
         </Row>
       </Container>
