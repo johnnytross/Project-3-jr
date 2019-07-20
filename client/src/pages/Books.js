@@ -9,11 +9,13 @@ import axios from 'axios'
 
 class Books extends Component {
   state = {
-    books: []
+    books: [],
+    search: []
   };
 
   componentDidMount() {
     this.loadBooks();
+    
   }
 
   loadBooks = () => {
@@ -35,10 +37,13 @@ class Books extends Component {
     e.preventDefault();
     //axios get recipes here
     
-    console.log(this.state.recipe)
-
+    console.log("getRecipes: "+this.state.recipe)
+    
+    axios.get(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4`)
+      .then(res => this.setState({ recipe: res.data }))
+      .catch(err => console.log(err));
+    
   }
-
 
   render() {
     return (
