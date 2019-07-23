@@ -42,10 +42,13 @@ class Books extends Component {
     const search = originSearch.split(" ").join("+");
     console.log(search);
 
-    const recipeAPI = `https://api.edamam.com/search?q=${search}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4`
+    const recipeAPI = `https://api.edamam.com/search?app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&q=${search}&healt=vegan`
     console.log(recipeAPI);
     axios.get(recipeAPI)
-      .then(res => this.setState({ recipe: res.data }))
+      .then(res => this.setState({ 
+        recipe: res.data,
+      })
+      )
       .catch(err => console.log(err));
     
   }
