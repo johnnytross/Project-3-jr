@@ -1,3 +1,4 @@
 module.exports = {
-  Book: require("./book")
+  Recipe: require("./book"),
+  Comments: require("./comments")
 };

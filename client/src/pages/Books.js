@@ -35,9 +35,19 @@ class Books extends Component {
     e.preventDefault();
 
 
+<<<<<<< HEAD
     console.log("getRecipes: " + this.state.recipe)
     axios.get(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4`)
       .then(res => this.setState({ recipe: res.data }))
+=======
+    const recipeAPI = `https://api.edamam.com/search?app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&q=${search}&healt=vegan`
+    console.log(recipeAPI);
+    axios.get(recipeAPI)
+      .then(res => this.setState({ 
+        recipe: res.data,
+      })
+      )
+>>>>>>> 2b398a20c2b39a69e6196dcb1d2de02f4af7dc35
       .catch(err => console.log(err));
 
     console.log(this.state.recipe)
