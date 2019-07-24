@@ -7,7 +7,7 @@ import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import axios from 'axios'
 
-class Books extends Component {
+class About extends Component {
   state = {
     books: []
   };
@@ -49,22 +49,15 @@ class Books extends Component {
     return (
       <Container fluid>
         <Row>
-          
           <Col size="md-12">
             <Jumbotron>
-              <h1>Veganize A Recipe!</h1>
-            
-            <form>
-              <Input name="recipe" onChange={this.handleChange} value={this.state.recipe} placeholder="Search by ingredients, recipe name, or keyword..." />
-              <FormBtn recipeSubmit={this.getRecipes} >Search</FormBtn>
-            </form>
+              <h3>About</h3>
             </Jumbotron>
           </Col>
-          
         </Row>
       </Container>
     );
   }
 }
 
-export default Books;
+export default About;
