@@ -9,6 +9,9 @@ function Nav() {
       <a className="navbar-brand" href="/saved" style={{color: "white"}}>
         Saved Recipes
       </a>
+      <a className="navbar-brand" href="/about" style={{color: "white"}}>
+        About
+      </a>
     </nav>
   );
 }
