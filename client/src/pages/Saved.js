@@ -57,11 +57,11 @@ class Saved extends Component {
               <List>
                 {this.state.books.map(book => (
                   <ListItem key={book._id}>
-                    <a href={"/books/" + book._id}>
+                    
                       <strong>
-                        {book.title} by {book.author}
+                       User name: {book.userName} Recipe name: {book.recipeName} Recipe link: {book.recipeLink} Recipe Image: {book.recipeImage}
                       </strong>
-                    </a>
+                    
                     <DeleteBtn />
                   </ListItem>
                 ))}
