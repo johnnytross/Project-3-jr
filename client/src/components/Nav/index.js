@@ -6,6 +6,9 @@ function Nav() {
       <a className="navbar-brand" href="/" style={{color: "white"}}>
         Veganize
       </a>
+      <a className="navbar-brand" href="/saved" style={{color: "white"}}>
+        Saved Recipes
+      </a>
     </nav>
   );
 }
