@@ -49,42 +49,18 @@ class Books extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-2">
-            <Jumbotron>
-              <h3>More stuff here...</h3>
-            </Jumbotron>
-
-          </Col>
-          <Col size="md-8">
+          
+          <Col size="md-12">
             <Jumbotron>
               <h1>Veganize A Recipe!</h1>
-            </Jumbotron>
+            
             <form>
               <Input name="recipe" onChange={this.handleChange} value={this.state.recipe} placeholder="Search by ingredients, recipe name, or keyword..." />
               <FormBtn recipeSubmit={this.getRecipes} >Search</FormBtn>
             </form>
-          </Col>
-          <Col size="md-2">
-            <Jumbotron>
-              <h3>Saved Recipes</h3>
             </Jumbotron>
-            {this.state.books.length ? (
-              <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <a href={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </a>
-                    <DeleteBtn />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-                <h5>No recipes found</h5>
-              )}
           </Col>
+          
         </Row>
       </Container>
     );

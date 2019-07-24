@@ -7,7 +7,7 @@ import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import axios from 'axios'
 
-class Saved extends Component {
+class About extends Component {
   state = {
     books: []
   };
@@ -51,24 +51,8 @@ class Saved extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h3>Saved Recipes</h3>
+              <h3>About</h3>
             </Jumbotron>
-            {this.state.books.length ? (
-              <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    
-                      <strong>
-                       User name: {book.userName} Recipe name: {book.recipeName} Recipe link: {book.recipeLink} Recipe Image: {book.recipeImage}
-                      </strong>
-                    
-                    <DeleteBtn />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-                <h5>No recipes found</h5>
-              )}
           </Col>
         </Row>
       </Container>
@@ -76,4 +60,4 @@ class Saved extends Component {
   }
 }
 
-export default Saved;
+export default About;
