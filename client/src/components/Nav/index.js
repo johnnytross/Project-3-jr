@@ -2,7 +2,10 @@ import React from 'react';
 
 function Nav() {
   return (
-    <nav className='navbar navbar-dark teal lighten-2' style={{ opacity: 0.8 }}>
+    <nav
+      className='navbar navbar-dark #004d40 teal darken-4'
+      style={{ opacity: 0.8 }}
+    >
       <div>
         <a className='navbar-brand' href='/' style={{ color: 'white' }}>
           Veganize
