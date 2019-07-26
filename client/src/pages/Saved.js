@@ -53,7 +53,7 @@ class Saved extends Component {
             <Jumbotron>
               <h3>Saved Recipes</h3>
             </Jumbotron>
-            <div>
+            <div class="recipeList">
             {this.state.books.length ? (
                <ul class="collection">
                 {this.state.books.map(book => (
@@ -65,7 +65,7 @@ class Saved extends Component {
                        <br></br>Recipe link: {book.recipeLink} 
                        <br></br>Recipe Image: {book.recipeImage}
                       </strong> */}
-                      <img src={book.recipeImage} alt={book.recipeName} height="250"></img>
+                      <img src={book.recipeImage} alt={book.recipeName} height="450"></img>
                       <br></br>
                       <span class="title">{book.recipeName}</span>
                       <p>Recipe link: {book.recipeLink}  <br></br>
