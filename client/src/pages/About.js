@@ -36,7 +36,7 @@ class About extends Component {
 
 
     console.log("getRecipes: " + this.state.recipe)
-    axios.get(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4`)
+    axios.get(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`)
       .then(res => this.setState({ recipe: res.data }))
       .catch(err => console.log(err));
 
