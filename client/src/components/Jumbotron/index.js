@@ -4,7 +4,7 @@ function Jumbotron({ children }) {
   return (
     <container>
       <div
-        style={{ height: 300, clear: "both", backgroundColor: "black", opacity: .65, paddingTop: 70, textAlign: "center", color: "white", }}
+        style={{ height: 400, clear: "both", backgroundColor: "black", opacity: .65, paddingTop: 70, textAlign: "center", color: "white", }}
         className="jumbotron"
       >
         {children}
