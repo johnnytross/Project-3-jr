@@ -55,7 +55,7 @@ class Books extends Component {
               <h1>Veganize A Recipe!</h1>
             
             <form>
-              <Input name="recipe" onChange={this.handleChange} value={this.state.recipe} placeholder="Search by ingredients, recipe name, or keyword..." />
+              <Input name="recipeName" onChange={this.handleChange} value={this.state.recipe} placeholder="Search by ingredients, recipe name, or keyword..." />
               <FormBtn recipeSubmit={this.getRecipes} >Search</FormBtn>
             </form>
             </Jumbotron>
