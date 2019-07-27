@@ -1,8 +1,6 @@
 .list-overflow-container {
-  max-height: 545px;
-  border: 1px #DDDDDD solid;
   border-radius: 4px;
-  overflow-y: scroll;
+  overflow-y: visible;
   overflow-x: hidden;
 }
 
@@ -14,6 +12,11 @@
   border-radius: 0px;
   border-left: none;
   border-right: none;
+  /* rgba allows you to set the background opacity without it impacting text or pictures or anything else in the container */
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+  /* opacity: .65; */
+  clear: both;
 }
 
 .list-overflow-container li * {
