@@ -15,15 +15,13 @@ if (process.env.NODE_ENV === 'production') {
 // Add routes, both API and view
 app.use(routes);
 // Connect to the Mongo DB
-<<<<<<< HEAD
 
 mongoose.connect(
   process.env.MONGODB_URI ||
     'mongodb+srv://tcollins:Sugarbone1433@veganizer-pbyzy.mongodb.net/test?retryWrites=true&w=majority'
 );
-=======
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/recipeDB");
->>>>>>> 7983b0a075dfd8b794a067c9c9ab23302a8a3d6b
+
+//mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/recipeDB");
 
 // Start the API server
 app.listen(PORT, function() {
