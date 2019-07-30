@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import DeleteBtn from "../components/DeleteBtn";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, FormBtn } from "../components/Form";
 import axios from 'axios'
 
 class Books extends Component {
@@ -37,7 +35,8 @@ class Books extends Component {
     console.log(value)
     // console.log("getRecipes: " + this.state.recipe)
     axios.get(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`)
-      .then(res => this.setState({ recipeName: res.data }))
+      //.then(res => this.setState({ recipe: res.data }))
+      .then(res => console.log(res.data.hits))
       .catch(err => console.log(err));
 
     console.log(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`)
@@ -56,7 +55,7 @@ class Books extends Component {
               <h1>Veganize A Recipe!</h1>
             <br></br>
             <form>
-              <Input name="recipeName" onChange={this.handleChange} value={this.state.recipe} placeholder="Search by ingredients, recipe name, or keyword..." />
+              <Input name="recipe" onChange={this.handleChange} value={this.state.recipe} placeholder="Search by ingredients, recipe name, or keyword..." />
               <FormBtn recipeSubmit={this.getRecipes} >Search</FormBtn>
             </form>
             </Jumbotron>
