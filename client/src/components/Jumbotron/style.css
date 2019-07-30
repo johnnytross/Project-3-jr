@@ -1,9 +1,14 @@
-.jumbotron{
-height: 400;
-clear: both;
+
+.jumbotron {
+height: 400px; 
+clear: "both";
 background-color: black;
 opacity: .65;
 padding-top: 70;
-text-align: center;
+text-align: center; 
 color: white
+}
+
+h1 {
+    font-size: 75px;
 }
