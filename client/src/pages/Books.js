@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
+<<<<<<< HEAD
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
 import axios from 'axios'
+=======
+//import DeleteBtn from "../components/DeleteBtn";
+import { Col, Row, Container } from "../components/Grid";
+//import { List, ListItem } from "../components/List";
+import { Input, FormBtn } from "../components/Form";
+// import queryString from 'query-string';
+import axios from 'axios';
+>>>>>>> f858a8a05ac3610a456c2696902245fe60948896
 
 class Books extends Component {
   state = {
@@ -31,16 +40,14 @@ class Books extends Component {
 
   getRecipes = (e, value) => {
     e.preventDefault();
-
-    console.log(value)
-    // console.log("getRecipes: " + this.state.recipe)
+    
     axios.get(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`)
-      //.then(res => this.setState({ recipe: res.data }))
+      // .then(res => this.setState({ recipeName: res.data }))
       .then(res => console.log(res.data.hits))
-      .catch(err => console.log(err));
+      .catch(err => console.log(err))
 
-    console.log(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`)
-    // console.log(this.state.recipe)
+      
+    console.log(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`);
 
   }
 
