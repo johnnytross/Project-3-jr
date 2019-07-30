@@ -18,7 +18,7 @@ function Nav() {
         <a className='navbar-brand' href='/login' style={{ color: 'white' }}>
           Login
         </a>
-        <a className='navbar-brand' href='/forms' style={{ color: 'white' }}>
+        <a className='navbar-brand' href='/signup' style={{ color: 'white' }}>
           Sign Up
         </a>
       </div>

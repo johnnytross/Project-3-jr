@@ -18,7 +18,7 @@ app.use(routes);
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-    'mongodb+srv://tcollins:Sugarbone1433@veganize-1esve.mongodb.net/test?retryWrites=true&w=majority'
+    'mongodb+srv://tcollins:Sugarbone1433@veganizer-pbyzy.mongodb.net/test?retryWrites=true&w=majority'
 );
 
 // Start the API server
