@@ -31,16 +31,17 @@ class Books extends Component {
     this.setState({ [name]: value })
   }
 
-  getRecipes = (e) => {
+  getRecipes = (e, value) => {
     e.preventDefault();
 
-
-    console.log("getRecipes: " + this.state.recipe)
+    console.log(value)
+    // console.log("getRecipes: " + this.state.recipe)
     axios.get(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`)
-      .then(res => this.setState({ recipe: res.data }))
+      .then(res => this.setState({ recipeName: res.data }))
       .catch(err => console.log(err));
 
-    console.log(this.state.recipe)
+    console.log(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`)
+    // console.log(this.state.recipe)
 
   }
 
