@@ -1,0 +1,9 @@
+.jumbotron{
+height: 400;
+clear: both;
+background-color: black;
+opacity: .65;
+padding-top: 70;
+text-align: center;
+color: white
+}
