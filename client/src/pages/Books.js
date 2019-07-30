@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import DeleteBtn from "../components/DeleteBtn";
+//import DeleteBtn from "../components/DeleteBtn";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
-import axios from 'axios'
+//import { List, ListItem } from "../components/List";
+import { Input, FormBtn } from "../components/Form";
+// import queryString from 'query-string';
+import axios from 'axios';
 
 class Books extends Component {
   state = {
@@ -33,15 +34,14 @@ class Books extends Component {
 
   getRecipes = (e, value) => {
     e.preventDefault();
-
-    console.log(value)
-    // console.log("getRecipes: " + this.state.recipe)
+    
     axios.get(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`)
-      .then(res => this.setState({ recipeName: res.data }))
-      .catch(err => console.log(err));
+      // .then(res => this.setState({ recipeName: res.data }))
+      .then(res => console.log(res.data.hits))
+      .catch(err => console.log(err))
 
-    console.log(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`)
-    // console.log(this.state.recipe)
+      
+    console.log(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`);
 
   }
 
@@ -56,8 +56,8 @@ class Books extends Component {
               <h1>Veganize A Recipe!</h1>
             <br></br>
             <form>
-              <Input name="recipeName" onChange={this.handleChange} value={this.state.recipe} placeholder="Search by ingredients, recipe name, or keyword..." />
-              <FormBtn recipeSubmit={this.getRecipes} >Search</FormBtn>
+              <Input name="recipe" onChange={this.handleChange} value={this.state.recipe} placeholder="Search by ingredients, recipe name, or keyword..." />
+              <FormBtn recipeSubmit={this.getRecipes}>Search</FormBtn>
             </form>
             </Jumbotron>
           </Col>
