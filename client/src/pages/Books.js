@@ -53,7 +53,7 @@ class Books extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h1>Veganize A Recipe!</h1>
-            
+            <br></br>
             <form>
               <Input name="recipeName" onChange={this.handleChange} value={this.state.recipe} placeholder="Search by ingredients, recipe name, or keyword..." />
               <FormBtn recipeSubmit={this.getRecipes} >Search</FormBtn>
