@@ -13,9 +13,8 @@ class Signup extends React.Component {
     event.preventDefault();
     const { name, email, password } = this.state;
     const user = { name, email, password };
-    axios.post('http://localhost:3001/api/users', user).then(res => {
-      console.log(res);
-      console.log(res.data);
+    axios.post('api/users', user).then(res => {
+      localStorage.setItem('token', res.data.token);
     });
   };
 
