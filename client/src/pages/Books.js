@@ -86,7 +86,7 @@ class Books extends Component {
             <br></br>
             <form>
               <Input name="recipe" onChange={this.handleChange} value={this.state.recipe} placeholder="Search by ingredients, recipe name, or keyword..." />
-              <FormBtn recipeSubmit={this.getRecipes}>Search</FormBtn>
+              <FormBtn recipeSubmit={this.getRecipes} >Search</FormBtn>
             </form>
             </Jumbotron>
           </Col>
