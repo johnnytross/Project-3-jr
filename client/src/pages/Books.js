@@ -38,11 +38,16 @@ class Books extends Component {
     axios.get(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`)
       // .then(res => this.setState({ recipeName: res.data }))
       .then(res => console.log(res.data.hits))
+      .then(console.log("promise kept"))
       .catch(err => console.log(err))
 
       
     console.log(`https://api.edamam.com/search?q=${this.state.recipe}&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`);
 
+  }
+
+  renderRecipe(res){
+    
   }
 
 
