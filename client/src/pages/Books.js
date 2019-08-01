@@ -72,13 +72,14 @@ class Books extends Component {
             </form>
             </Jumbotron>
           </Col>
-          <Col size="md-6 md-offset-2">
+          <Col size="md-12">
             {this.state.recipeList.length ? (
               <List>
                 {this.state.recipeList.map(rec => (
                   <ListItem>
                     <img src={rec.recipe.image} height="450" width="auto"></img>
                     <span class="title">{rec.recipe.label}</span>
+                    <br></br>
                     {rec.recipe.url}
                     <DeleteBtn />
                   </ListItem>
