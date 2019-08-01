@@ -20,8 +20,12 @@ export function TextArea(props) {
 
 export function FormBtn(props) {
   return (
-    <button {...props} style={{ marginBottom: 10 }} onClick={props.recipeSubmit} className="btn btn-success btn-success btn-lg">
-      {props.children}
-    </button>
+    
+      // <button className="md-form active-pink-2 mb-3">
+      // <input className="form-control" type="text" placeholder="Search" aria-label="Search">
+      // </button>
+      <button {...props} style={{ marginBottom: 10 }} onClick={props.recipeSubmit} className="btn btn-success btn-success btn-lg">
+       {props.children}
+     </button> 
   );
 }

@@ -4,6 +4,7 @@ import API from "../utils/API";
 import DeleteBtn from "../components/DeleteBtn";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
+import DefaultMsg from "../components/DefaultMsg";
 
 class Saved extends Component {
   state = {
@@ -52,7 +53,7 @@ class Saved extends Component {
                 ))}
               </List>
             ) : (
-                <h5>No recipes found</h5>
+              <DefaultMsg />
               )}
           </Col>
         </Row>
