@@ -1,0 +1,5 @@
+body {
+    background-image: url('94279872.jpg'), url('dark_wood.png');
+    background-repeat: no-repeat, repeat;
+    background-size: 1600px;
+}
