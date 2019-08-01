@@ -98,7 +98,7 @@ class Books extends Component {
                     <DeleteBtn />
                     <br />
                     <br />
-                    <a href={rec.recipe.url}>
+                    <a href={rec.recipe.url} target='_blank'>
                       <img
                         src={rec.recipe.image}
                         height='450'
@@ -107,7 +107,9 @@ class Books extends Component {
                       />
                     </a>
                     <br />
-                    <span class='title'>{rec.recipe.label}</span>
+                    <span className='title text-center'>
+                      {rec.recipe.label}
+                    </span>
                     <br />
                   </ListItem>
                 ))}
