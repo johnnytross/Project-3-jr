@@ -5,8 +5,8 @@ import DeleteBtn from "../components/DeleteBtn";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
-// import queryString from 'query-string';
 import axios from 'axios';
+import DefaultMsg from "../components/DefaultMsg";
 
 
 class Books extends Component {
@@ -51,9 +51,6 @@ class Books extends Component {
 
   }
 
-  renderRecipe(res){
-    
-  }
 
 
   render() {
@@ -72,20 +69,26 @@ class Books extends Component {
             </form>
             </Jumbotron>
           </Col>
-          <Col size="md-6 md-offset-2">
+          <Col size="md-3"></Col>
+          <Col size="md-6">
             {this.state.recipeList.length ? (
               <List>
                 {this.state.recipeList.map(rec => (
                   <ListItem>
-                    <img src={rec.recipe.image} height="450" width="auto"></img>
-                    <span class="title">{rec.recipe.label}</span>
-                    {rec.recipe.url}
                     <DeleteBtn />
+                    <br></br>
+                    <br></br>
+                    <a href={rec.recipe.url}>
+                      <img src={rec.recipe.image} height="450" width="auto" alt={rec.recipe.label}></img>
+                    </a>
+                    <br></br>
+                    <span class="title">{rec.recipe.label}</span>
+                    <br></br>
                   </ListItem>
                 ))}
               </List>
             ) : (
-              <h5>No recipes found. Try searching for one.</h5>
+              <DefaultMsg />
             )}
           </Col>
 

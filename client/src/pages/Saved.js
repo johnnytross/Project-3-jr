@@ -33,24 +33,21 @@ class Saved extends Component {
               <h3>Saved Recipes</h3>
             </Jumbotron>
           </Col>
-          <Col size="md-6 md-offset-2">
+          <Col size="md-3"></Col>
+          <Col size="md-6">
             {this.state.books.length ? (
                <List>
                 {this.state.books.map(book => (
                     <ListItem>
-                      {/* <strong>
-                       User name: {book.userName} 
-                       <br></br>Recipe name: {book.recipeName} 
-                       <br></br>Recipe link: {book.recipeLink} 
-                       <br></br>Recipe Image: {book.recipeImage}
-                      </strong> */}
+                      <DeleteBtn />
+                      <br></br>
+                      <br></br>                    
                       <img src={book.recipeImage} alt={book.recipeName} height="450" width="auto"></img>
                       <br></br>
                       <span class="title">{book.recipeName}</span>
                       <p>Recipe link: {book.recipeLink}  <br></br>
                       Recipe Image: {book.recipeImage}
-                      </p>
-                    <DeleteBtn />
+                      </p>                    
                     </ListItem>
                 ))}
               </List>
