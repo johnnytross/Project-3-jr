@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://tcollins:Sugarbone1433@veganizer-pbyzy.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
+}

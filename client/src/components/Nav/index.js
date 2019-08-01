@@ -1,26 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function Nav() {
-  return (
-    <nav className='navbar navbar-dark dark bg-dark' style={{ opacity: 0.8 }}>
-      <div>
-        <a className='navbar-brand' href='/' style={{ color: 'white' }}>
-          Veganize
-        </a>
-        <a className='navbar-brand' href='/saved' style={{ color: 'white' }}>
-          Saved Recipes
-        </a>
-        <a className='navbar-brand' href='/about' style={{ color: 'white' }}>
-          About
-        </a>
-      </div>
-      <div>
-        <a className='navbar-brand' href='/login' style={{ color: 'white' }}>
-          Login
-        </a>
-      </div>
-    </nav>
-  );
+class Nav extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <nav className='navbar navbar-dark dark bg-dark' style={{ opacity: 0.8 }}>
+        <div>
+          <a className='navbar-brand' href='/' style={{ color: 'white' }}>
+            Veganize
+          </a>
+          <a className='navbar-brand' href='/saved' style={{ color: 'white' }}>
+            Saved Recipes
+          </a>
+          <a className='navbar-brand' href='/about' style={{ color: 'white' }}>
+            About
+          </a>
+        </div>
+        <div>
+          <a className='navbar-brand' href='/login' style={{ color: 'white' }}>
+            {this.props.signup ? 'Login' : 'Logout'}
+          </a>
+          <a className='navbar-brand' href='/signup' style={{ color: 'white' }}>
+            Sign Up
+          </a>
+        </div>
+      </nav>
+    );
+  }
 }
 
 export default Nav;
