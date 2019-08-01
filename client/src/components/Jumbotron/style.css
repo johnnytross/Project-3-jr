@@ -1,5 +1,4 @@
 .jumbotron {
-<<<<<<< HEAD
   height: 400px;
   clear: 'both';
   background-color: black;
@@ -7,14 +6,6 @@
   padding-top: 70;
   text-align: center;
   color: white;
-=======
-height: 400px; 
-clear: "both";
-background-color: rgba(0, 0, 0, 0.65);
-padding-top: 70;
-text-align: center; 
-color: white
->>>>>>> fd4d5ddc5874a30c4633d887fcd1fbb81572b7b3
 }
 
 h1 {
