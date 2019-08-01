@@ -78,11 +78,11 @@ class Books extends Component {
                     <DeleteBtn />
                     <br></br>
                     <br></br>
-                    <a href={rec.recipe.url}>
+                    <a href={rec.recipe.url} target="_blank">
                       <img src={rec.recipe.image} height="450" width="auto" alt={rec.recipe.label}></img>
                     </a>
                     <br></br>
-                    <span class="title">{rec.recipe.label}</span>
+                    <span className="title text-center">{rec.recipe.label}</span>
                     <br></br>
                   </ListItem>
                 ))}
