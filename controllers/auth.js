@@ -73,7 +73,7 @@ router.post(
         payload,
         config.get('jwtSecret'),
         // 3600 seconds is an hour will remove the last 2 zeros later
-        { expiresIn: 360000 },
+        { expiresIn: 3600 },
         //If we don't get an error we send the token back to the client
         (err, token) => {
           if (err) throw err;
