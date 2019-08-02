@@ -11,10 +11,15 @@ class Signup extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    //grabbing values from state and storing it in 3 variables
     const { name, email, password } = this.state;
+    //storing name email and password inside of an object
     const user = { name, email, password };
+
     axios.post('api/users', user).then(res => {
-      //localStorage.setItem('token', res.data.token);
+      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('email', res.data.user);
+      window.location.href = 'http://localhost:3000/';
     });
   };
 

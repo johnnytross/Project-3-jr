@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import { Route, Redirect } from 'react-router-dom';
 
 class Nav extends Component {
-  constructor(props) {
-    super(props);
-  }
+  state = {
+    redirect: false
+  };
+
+  logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('email');
+  };
 
   render() {
+    const authentication = localStorage.getItem('token');
     return (
       <nav className='navbar navbar-dark dark bg-dark' style={{ opacity: 0.8 }}>
         <div>
@@ -20,9 +27,24 @@ class Nav extends Component {
           </a>
         </div>
         <div>
-          <a className='navbar-brand' href='/login' style={{ color: 'white' }}>
-            {this.props.signup ? 'Login' : 'Logout'}
-          </a>
+          {!authentication ? (
+            <a
+              className='navbar-brand'
+              href='/login'
+              style={{ color: 'white' }}
+            >
+              Login
+            </a>
+          ) : (
+            <a
+              onClick={this.logout}
+              className='navbar-brand'
+              href='/login'
+              style={{ color: 'white' }}
+            >
+              Logout
+            </a>
+          )}
           <a className='navbar-brand' href='/signup' style={{ color: 'white' }}>
             Sign Up
           </a>
