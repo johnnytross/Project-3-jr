@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style.css';
 
 class Nav extends Component {
   constructor(props) {
@@ -7,23 +8,23 @@ class Nav extends Component {
 
   render() {
     return (
-      <nav className='navbar navbar-dark dark bg-dark' style={{ opacity: 0.8 }}>
+      <nav className='navbar'>
         <div>
-          <a className='navbar-brand' href='/' style={{ color: 'white' }}>
+          <a className='navbar-brand' href='/'>
             Veganize
           </a>
-          <a className='navbar-brand' href='/saved' style={{ color: 'white' }}>
+          <a className='navbar-brand' href='/saved'>
             Saved Recipes
           </a>
-          <a className='navbar-brand' href='/about' style={{ color: 'white' }}>
+          <a className='navbar-brand' href='/about'>
             About
           </a>
         </div>
         <div>
-          <a className='navbar-brand' href='/login' style={{ color: 'white' }}>
+          <a className='navbar-brand' href='/login'>
             {this.props.signup ? 'Login' : 'Logout'}
           </a>
-          <a className='navbar-brand' href='/signup' style={{ color: 'white' }}>
+          <a className='navbar-brand' href='/signup'>
             Sign Up
           </a>
         </div>

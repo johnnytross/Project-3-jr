@@ -41,14 +41,18 @@ class Saved extends Component {
                 {this.state.books.map(book => (
                     <ListItem>
                       <DeleteBtn />
-                      <br></br>
-                      <br></br>                    
-                      <img src={book.recipeImage} alt={book.recipeName} height="450" width="auto"></img>
-                      <br></br>
-                      <span class="title">{book.recipeName}</span>
-                      <p>Recipe link: {book.recipeLink}  <br></br>
-                      Recipe Image: {book.recipeImage}
-                      </p>                    
+                      <br />
+                      <br />
+                      <a href={book.recipeLink} target='_blank'>
+                        <img
+                          src={book.recipeImage} 
+                          alt={book.recipeName} 
+                          height="450" 
+                          width="auto">
+                        </img>
+                      </a>                   
+                      <br />
+                      <span class="title">{book.recipeName}</span>                  
                     </ListItem>
                 ))}
               </List>

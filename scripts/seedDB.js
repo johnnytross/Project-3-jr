@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Books collection and inserts the books below
+// This file inserts the books below
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/recipeDB"
+    'mongodb+srv://tcollins:Sugarbone1433@veganizer-pbyzy.mongodb.net/test?retryWrites=true&w=majority'
 );
 
 const recipeSeed = [
