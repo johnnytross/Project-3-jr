@@ -56,17 +56,16 @@ class Books extends Component {
       }&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`
     );
 
-    console.log('getRecipes: ' + this.state.recipe);
-    axios
-      .get(
-        `https://api.edamam.com/search?q=${
-          this.state.recipe
-        }&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`
-      )
-      .then(res => this.setState({ recipe: res.data }))
-      .catch(err => console.log(err));
+    // axios
+    //   .get(
+    //     `https://api.edamam.com/search?q=${
+    //       this.state.recipe
+    //     }&app_id=b3543550&app_key=318de1bc9554cc8c572774822aa601b4&health=vegan`
+    //   )
+    //   .then(res => this.setState({ recipe: res.data }))
+    //   .catch(err => console.log(err));
 
-    console.log(this.state.recipe);
+    
   };
 
   render() {

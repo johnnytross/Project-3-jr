@@ -1,0 +1,11 @@
+.navbar {
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.navbar-brand {
+    color: white;
+}
+
+a:hover {
+    color: green;
+}

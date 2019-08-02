@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { Route, Redirect } from 'react-router-dom';
+=======
+import './style.css';
+>>>>>>> ba427de8010bab75c04ed04fb403bbf91d7dd087
 
 class Nav extends Component {
   state = {
@@ -14,19 +18,20 @@ class Nav extends Component {
   render() {
     const authentication = localStorage.getItem('token');
     return (
-      <nav className='navbar navbar-dark dark bg-dark' style={{ opacity: 0.8 }}>
+      <nav className='navbar'>
         <div>
-          <a className='navbar-brand' href='/' style={{ color: 'white' }}>
+          <a className='navbar-brand' href='/'>
             Veganize
           </a>
-          <a className='navbar-brand' href='/saved' style={{ color: 'white' }}>
+          <a className='navbar-brand' href='/saved'>
             Saved Recipes
           </a>
-          <a className='navbar-brand' href='/about' style={{ color: 'white' }}>
+          <a className='navbar-brand' href='/about'>
             About
           </a>
         </div>
         <div>
+<<<<<<< HEAD
           {!authentication ? (
             <a
               className='navbar-brand'
@@ -46,6 +51,12 @@ class Nav extends Component {
             </a>
           )}
           <a className='navbar-brand' href='/signup' style={{ color: 'white' }}>
+=======
+          <a className='navbar-brand' href='/login'>
+            {this.props.signup ? 'Login' : 'Logout'}
+          </a>
+          <a className='navbar-brand' href='/signup'>
+>>>>>>> ba427de8010bab75c04ed04fb403bbf91d7dd087
             Sign Up
           </a>
         </div>
