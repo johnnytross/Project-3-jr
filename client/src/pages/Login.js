@@ -28,15 +28,21 @@ class Login extends Component {
           <Col size='md-12'>
             <Jumbotron>
               <h3>Login</h3>
-            </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
+              <br></br>
+              <Row>
+              <Col size='md-3'>
+              </Col>
           <Col size='md-6'>
             <Input />
             <Input />
+            <br></br>
+        <input className='btn btn-success btn-success btn-lg' type='submit' value='Submit' />
           </Col>
         </Row>
+            </Jumbotron>
+          </Col>
+        </Row>
+        
       </Container>
     );
   }

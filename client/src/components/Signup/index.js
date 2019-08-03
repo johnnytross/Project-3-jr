@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Jumbotron from '../Jumbotron';
 
 // This file exports the Input, TextArea, and FormBtn components
 class Signup extends React.Component {
@@ -20,6 +21,7 @@ class Signup extends React.Component {
 
   render() {
     return (
+      <Jumbotron>
       <form onSubmit={this.handleSubmit}>
         <label>
           Name:
@@ -30,6 +32,7 @@ class Signup extends React.Component {
             name='name'
           />
         </label>
+        <br></br>
         <label>
           Email:
           <input
@@ -39,6 +42,7 @@ class Signup extends React.Component {
             name='email'
           />
         </label>
+        <br></br>
         <label>
           Password:
           <input
@@ -48,8 +52,10 @@ class Signup extends React.Component {
             name='password'
           />
         </label>
-        <input type='submit' value='Submit' />
+        <br></br>
+        <input className='btn btn-success btn-success btn-lg' type='submit' value='Submit' />
       </form>
+      </Jumbotron>
     );
   }
 }

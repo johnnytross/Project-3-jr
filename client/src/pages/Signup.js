@@ -21,6 +21,7 @@ class Signup extends React.Component {
 
   render() {
     return (
+
       <form onSubmit={this.handleSubmit}>
         <label>
           Name:
