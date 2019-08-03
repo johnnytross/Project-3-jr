@@ -11,7 +11,8 @@ import DefaultMsg from '../components/DefaultMsg';
 class Books extends Component {
   state = {
     books: [],
-    recipeList: []
+    recipeList: [],
+    isSaved: false
   };
 
   componentDidMount() {
@@ -68,6 +69,21 @@ class Books extends Component {
     
   };
 
+  savedRecipe = () => {
+    // if(this.state.isSaved === true){
+    //   this.setState({
+    //     isSaved: false
+    //   })
+    // } else {
+    //   this.setState({
+    //     isSaved: true
+    //   })
+    // }
+    // const { isSaved} =this.state
+
+    this.setState({isSaved: !this.state.isSaved})
+  }
+
   render() {
     //const {recipeList} = this.state;
     return (
@@ -84,7 +100,7 @@ class Books extends Component {
                   value={this.state.recipe}
                   placeholder='Search by ingredients, recipe name, or keyword...'
                 />
-                <FormBtn recipeSubmit={this.getRecipes}>Search</FormBtn>
+                <FormBtn onClick={this.getRecipes}>Search</FormBtn>
               </form>
             </Jumbotron>
           </Col>
@@ -94,10 +110,10 @@ class Books extends Component {
               <List>
                 {this.state.recipeList.map(rec => (
                   <ListItem>
-                    <DeleteBtn />
+                    <DeleteBtn isSaved={this.state.isSaved} savedRecipe={this.savedRecipe} />
                     <br />
                     <br />
-                    <a href={rec.recipe.url} target='_blank'>
+                    <a href={rec.recipe.url} target='_blank' rel="noopener noreferrer">
                       <img
                         src={rec.recipe.image}
                         height='450'

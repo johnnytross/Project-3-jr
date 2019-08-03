@@ -23,7 +23,7 @@ export function FormBtn(props) {
     <button
       {...props}
       style={{ marginBottom: 10 }}
-      onClick={props.recipeSubmit}
+      // onClick={props.recipeSubmit}
       className='btn btn-success btn-success btn-lg'
     >
       {props.children}

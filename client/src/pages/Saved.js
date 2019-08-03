@@ -43,7 +43,7 @@ class Saved extends Component {
                       <DeleteBtn />
                       <br />
                       <br />
-                      <a href={book.recipeLink} target='_blank'>
+                      <a href={book.recipeLink} target='_blank' rel="noopener noreferrer">
                         <img
                           src={book.recipeImage} 
                           alt={book.recipeName} 

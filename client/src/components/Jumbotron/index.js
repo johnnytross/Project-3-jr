@@ -3,9 +3,9 @@ import './style.css';
 
 function Jumbotron({ children }) {
   return (
-    <container>
+    <div className="container">
       <div className='jumbotron'>{children}</div>
-    </container>
+    </div>
   );
 }
 
