@@ -113,7 +113,7 @@ class Books extends Component {
                     <DeleteBtn isSaved={this.state.isSaved} savedRecipe={this.savedRecipe} />
                     <br />
                     <br />
-                    <a href={rec.recipe.url} target='_blank'>
+                    <a href={rec.recipe.url} target='_blank' rel="noopener noreferrer">
                       <img
                         src={rec.recipe.image}
                         height='450'
