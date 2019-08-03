@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LoginForm from '../components/Login';
+// import LoginForm from '../components/Login';
 import Jumbotron from '../components/Jumbotron';
 // import API from "../utils/API";
 // import DeleteBtn from "../components/DeleteBtn";
