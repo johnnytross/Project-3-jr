@@ -7,6 +7,8 @@ import { List, ListItem } from '../components/List';
 import { Input, FormBtn } from '../components/Form';
 import axios from 'axios';
 import DefaultMsg from '../components/DefaultMsg';
+import Collapsible from 'react-collapsible';
+
 
 class Books extends Component {
   state = {
@@ -110,6 +112,7 @@ class Books extends Component {
               <List>
                 {this.state.recipeList.map(rec => (
                   <ListItem>
+                    <Collapsible trigger={rec.recipe.label}>
                     <DeleteBtn isSaved={this.state.isSaved} savedRecipe={this.savedRecipe} />
                     <br />
                     <br />
@@ -126,6 +129,7 @@ class Books extends Component {
                       {rec.recipe.label}
                     </span>
                     <br />
+                    </Collapsible>
                   </ListItem>
                 ))}
               </List>
