@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import Jumbotron from '../Jumbotron';
+import { Col, Row, Container } from '../Grid';
 
 class Login extends React.Component {
   state = { email: '', password: '' };
@@ -25,6 +27,10 @@ class Login extends React.Component {
 
   render() {
     return (
+      <Container fluid>
+        <Row>
+          <Col size='md-12'>
+            <Jumbotron>
       <form onSubmit={this.handleSubmit}>
         <label>
           Email:
@@ -35,6 +41,7 @@ class Login extends React.Component {
             name='email'
           />
         </label>
+        <br></br>
         <label>
           Password:
           <input
@@ -44,8 +51,13 @@ class Login extends React.Component {
             name='password'
           />
         </label>
-        <input type='submit' value='Submit' />
+        <br></br>
+        <input className='btn btn-success btn-success btn-lg' type='submit' value='Submit' />
       </form>
+      </Jumbotron>
+      </Col>
+        </Row>
+      </Container>
     );
   }
 }

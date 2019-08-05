@@ -5,6 +5,7 @@ import DeleteBtn from "../components/DeleteBtn";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import DefaultMsg from "../components/DefaultMsg";
+import Collapsible from 'react-collapsible';
 
 class Saved extends Component {
   state = {
@@ -31,15 +32,16 @@ class Saved extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h3>Saved Recipes</h3>
+              <h1>Saved Recipes</h1>
             </Jumbotron>
           </Col>
-          <Col size="md-3"></Col>
-          <Col size="md-6">
+          
+          <Col size="md-12">
             {this.state.books.length ? (
                <List>
                 {this.state.books.map(book => (
                     <ListItem>
+                      <Collapsible trigger={book.recipeName}>
                       <DeleteBtn />
                       <br />
                       <br />
@@ -52,7 +54,8 @@ class Saved extends Component {
                         </img>
                       </a>                   
                       <br />
-                      <span class="title">{book.recipeName}</span>                  
+                      <span class="title">{book.recipeName}</span>
+                      </Collapsible>                 
                     </ListItem>
                 ))}
               </List>
