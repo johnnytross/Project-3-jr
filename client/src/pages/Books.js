@@ -106,8 +106,8 @@ class Books extends Component {
               </form>
             </Jumbotron>
           </Col>
-          <Col size='md-3' />
-          <Col size='md-6'>
+          
+          <Col size='md-12'>
             {this.state.recipeList.length ? (
               <List>
                 {this.state.recipeList.map(rec => (
@@ -125,7 +125,7 @@ class Books extends Component {
                       />
                     </a>
                     <br />
-                    <span className='collapseLabel title text-center'>
+                    <span className='title'>
                       {rec.recipe.label}
                     </span>
                     <br />
