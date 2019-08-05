@@ -111,8 +111,8 @@ class Books extends Component {
             {this.state.recipeList.length ? (
               <List>
                 {this.state.recipeList.map(rec => (
-                  <ListItem>
-                    <Collapsible trigger={rec.recipe.label}>
+                  <ListItem className="collapseLabel">
+                    <Collapsible  trigger={rec.recipe.label} >
                     <DeleteBtn isSaved={this.state.isSaved} savedRecipe={this.savedRecipe} />
                     <br />
                     <br />
@@ -125,7 +125,7 @@ class Books extends Component {
                       />
                     </a>
                     <br />
-                    <span className='title text-center'>
+                    <span className='collapseLabel title text-center'>
                       {rec.recipe.label}
                     </span>
                     <br />
