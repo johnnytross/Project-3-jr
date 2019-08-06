@@ -20,7 +20,7 @@ class Signup extends React.Component {
     axios.post('api/users', user).then(res => {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('email', res.data.user);
-      window.location.href = 'http://localhost:3000/';
+      window.location.href = '/';
     });
   };
 
