@@ -21,7 +21,7 @@ class Login extends React.Component {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('email', res.data.user);
 
-      window.location.href = 'http://localhost:3000/';
+      window.location.href = '/';
     });
   };
 
