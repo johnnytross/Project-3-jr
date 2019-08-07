@@ -48,7 +48,9 @@ class Books extends Component {
       // .then(res => this.setState({ recipeName: res.data }))
       .then(res => {
         console.log(res.data.hits);
-        this.setState({ recipeList: res.data.hits });
+        const recipes = res.data.hits
+        recipes.forEach(recipe=>(recipe.isSaved=false))
+        this.setState({ recipeList: recipes });
       })
       .then(console.log('promise kept'))
       .catch(err => console.log(err));
@@ -71,19 +73,24 @@ class Books extends Component {
     
   };
 
-  savedRecipe = () => {
-    // if(this.state.isSaved === true){
-    //   this.setState({
-    //     isSaved: false
-    //   })
-    // } else {
-    //   this.setState({
-    //     isSaved: true
-    //   })
-    // }
-    // const { isSaved} =this.state
-
-    this.setState({isSaved: !this.state.isSaved})
+  savedRecipe = (i, recipe) => {
+    console.log(recipe)
+    const {recipeList} = this.state
+    const payload = {
+      userName: 'johnny', //TODO: grab email from JWT 
+      recipeName: recipe.label,
+      recipeLink: "https://cookieandkate.com/vegan-mac-and-cheese-recipe/",
+      recipeImage:"https://cookieandkate.com/images/2017/06/best-vegan-mac-and-cheese-recipe-550x757.jpg",
+    }
+    API.saveBook(payload).then(res =>{
+      console.log(res)
+    }).catch(err => console.log(err));
+    // axios.post post request here with username and all other info needed for post route
+    // axios.post("/api/books", payload).then(res => {
+    //   console.log(res)
+    // })
+    recipeList[i].isSaved = !recipeList[i].isSaved
+    this.setState({recipeList})
   }
 
   render() {
@@ -106,14 +113,15 @@ class Books extends Component {
               </form>
             </Jumbotron>
           </Col>
-          
-          <Col size='md-12'>
+          <Col size='md-3'></Col>
+          <Col size='md-6'>
             {this.state.recipeList.length ? (
               <List>
-                {this.state.recipeList.map(rec => (
-                  <ListItem className="collapseLabel">
+                {this.state.recipeList.map((rec, i) => (
+                  <ListItem className="collapseLabel" key={i}>
                     <Collapsible  trigger={rec.recipe.label} >
-                    <DeleteBtn isSaved={this.state.isSaved} savedRecipe={this.savedRecipe} />
+
+                    <DeleteBtn isSaved={rec.isSaved} savedRecipe={()=>{this.savedRecipe(i,rec)}} />
                     <br />
                     <br />
                     <a href={rec.recipe.url} target='_blank' rel="noopener noreferrer">
@@ -126,8 +134,19 @@ class Books extends Component {
                     </a>
                     <br />
                     <span className='title'>
-                      {rec.recipe.label}
+                      <h2>Health Label</h2>
                     </span>
+                    <span>{rec.recipe.healthLabels.join(" ")}</span>
+                    <br />
+                    <span className='title'>
+                      <h2>Cautions</h2>
+                    </span>
+                    <span>{rec.recipe.cautions.join(" ")}</span>
+                    <br />
+                    <span className='title'>
+                      <h2>Ingredients</h2>
+                    </span>
+                    <span>{rec.recipe.ingredientLines.join(" ")}</span>
                     <br />
                     </Collapsible>
                   </ListItem>

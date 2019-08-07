@@ -13,7 +13,10 @@ class Saved extends Component {
   };
 
   componentDidMount() {
-    this.loadBooks();
+    if (localStorage.getItem("token")){
+      this.loadBooks()
+    }
+    
   }
 
   loadBooks = () => {
@@ -22,6 +25,10 @@ class Saved extends Component {
       .catch(err => console.log(err));
   };
 
+  savedRecipe = () => {
+
+    this.setState({isSaved: !this.state.isSaved})
+  }
 
 
 
@@ -42,7 +49,7 @@ class Saved extends Component {
                 {this.state.books.map(book => (
                     <ListItem>
                       <Collapsible trigger={book.recipeName}>
-                      <DeleteBtn />
+                      <DeleteBtn isSaved={this.state.isSaved} savedRecipe={this.savedRecipe} />
                       <br />
                       <br />
                       <a href={book.recipeLink} target='_blank' rel="noopener noreferrer">
