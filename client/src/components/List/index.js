@@ -6,7 +6,7 @@ import "./style.css";
 export function List({ children }) {
   return (
     <div className="list-overflow-container">
-      <ul className="list-group">{children}</ul>
+      <ul className="list-group" style={{maxWidth: "700px"}}>{children}</ul>
     </div>
   );
 }
