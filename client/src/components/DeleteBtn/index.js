@@ -8,8 +8,6 @@ function DeleteBtn(props) {
     <span className="delete-btn" role="button" onClick={props.savedRecipe} tabIndex="0">
       {props.isSaved ? "★" : "☆"}
       
-      
-      {/* ★ ☆ */}
     </span>
   );
 }
