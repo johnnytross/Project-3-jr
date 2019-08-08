@@ -47,7 +47,7 @@ class Saved extends Component {
             {this.state.books.length ? (
                <List>
                 {this.state.books.map(book => (
-                    <ListItem key={this.state.books.id}>
+                    <ListItem>
                       <Collapsible trigger={book.recipeName}>
                       <DeleteBtn isSaved={this.state.isSaved} savedRecipe={this.savedRecipe} />
                       <br />
