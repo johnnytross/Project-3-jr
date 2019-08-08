@@ -14,5 +14,20 @@ This is how our collapsible looks once you click on it. It shows a recipe name, 
 
 This is the saved recipe page. If you are not logged in, it shows nothing under saved recipes in the jumbotron. If you are logged in, it shows the list of saved recipes. 
 
+![Saved recipe collapsible](client/src/images/savedRecipesCollapsible.png)
+
+This is the collapsible for the saved recipe page. Right now it shows the user who saved the recipe and the name of the recipe as well as the image for the recipe. 
+
+![About](client/src/images/about.png)
+
+This page shows users what we are about and our values. 
+
+![Sign up](client/src/images/signUp.png)
+
+This is the page where our users will sign up.
+
+![Sign up](client/src/images/logIn.png)
+
+This is the page where our users will log in.
 
 
