@@ -2,8 +2,8 @@ import axios from 'axios';
 
 export default {
   // Gets all books
-  getBooks: function() {
-    return axios.get('/api/books', {
+  getBooks: function(userName) {
+    return axios.get('/api/books/'+ userName, {
       headers: { Authorization: localStorage.getItem('token') }
     });
   },
@@ -17,7 +17,7 @@ export default {
   },
   // Saves a book to the database
   saveBook: function(bookData) {
-    return axios.post('/api/books', bookData);
+    return axios.post('/api/books/', bookData);
   }
   // ,
   // //get recipes by user

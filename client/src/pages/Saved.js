@@ -6,6 +6,8 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import DefaultMsg from "../components/DefaultMsg";
 import Collapsible from 'react-collapsible';
+const user = localStorage.getItem('email');
+
 
 class Saved extends Component {
   state = {
@@ -20,13 +22,13 @@ class Saved extends Component {
   }
 
   loadBooks = () => {
-    API.getBooks()
+    console.log(user)
+    API.getBooks(user)
       .then(res => this.setState({ books: res.data }))
       .catch(err => console.log(err));
   };
 
   savedRecipe = () => {
-
     this.setState({isSaved: !this.state.isSaved})
   }
 
