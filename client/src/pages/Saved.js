@@ -47,7 +47,7 @@ class Saved extends Component {
             {this.state.books.length ? (
                <List>
                 {this.state.books.map(book => (
-                    <ListItem>
+                    <ListItem key={this.state.books.id}>
                       <Collapsible trigger={book.recipeName}>
                       <DeleteBtn isSaved={this.state.isSaved} savedRecipe={this.savedRecipe} />
                       <br />
@@ -61,7 +61,9 @@ class Saved extends Component {
                         </img>
                       </a>                   
                       <br />
-                      <span class="title">{book.recipeName}</span>
+                      <span className="title">{book.userName}</span>
+                      <br />
+                      <span className="title">{book.recipeName}</span>
                       </Collapsible>                 
                     </ListItem>
                 ))}

@@ -12,5 +12,9 @@ router
   .get(booksController.findById)
   .put(booksController.update)
   .delete(booksController.remove);
+// Matches with "/api/books/:id"
+router
+  .route("/:userName")
+  .get(booksController.findByuserName)
 
 module.exports = router;
