@@ -101,4 +101,12 @@ router.post(
   }
 );
 
+router.put('/saved/:id', (req, res) => {
+  db.user.findById(req.params.id, req.body, (err, data) => {
+    if (err) throw err;
+    data.saved.push(req.body).save();
+    res.send(data);
+  });
+});
+
 module.exports = router;
