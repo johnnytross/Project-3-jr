@@ -40,3 +40,4 @@ Tracy: JWT/Front end
 
 ## Trello
 
+![Trello](client/src/images/screenshot-trello.com-2019.08.08-18_20_00.png)
