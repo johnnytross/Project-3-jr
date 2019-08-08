@@ -6,6 +6,13 @@ Our project is important because we care about addressing the issues facing our 
 
 This is our home page. It has links to our saved page and about page. The navigation bar also contains links to sign up or log in or log out, depending on if you're already logged in or not.
 
-![Home page](Project-3\client\src\images\homepageCollapsible.png)
+![Home page collapsible](Project-3\client\src\images\homepageCollapsible.png)
 
 This is how our collapsible looks once you click on it. It shows a recipe name, recipe picture, and lists the health labels, cautions, and ingredients. 
+
+![Saved recipe](Project-3\client\src\images\savedRecipes.png)
+
+This is the saved recipe page. If you are not logged in, it shows nothing under saved recipes in the jumbotron. If you are logged in, it shows the list of saved recipes. 
+
+
+
