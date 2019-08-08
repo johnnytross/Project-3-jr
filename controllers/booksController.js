@@ -14,8 +14,14 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db.Recipe.findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
+    console.log('route hit')
+    console.log(req.params.id)
+    db.Recipe.find({userName: req.params.id})
+      .then(dbModel => {
+      console.log('log')
+      console.log(dbModel)
+      res.json(dbModel)
+      })
       .catch(err => res.status(422).json(err));
   },
   findByuserName: function(req, res) {
