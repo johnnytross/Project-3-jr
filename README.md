@@ -3,3 +3,9 @@
 Our project is important because we care about addressing the issues facing our planet's climate. By reducing or eliminating our meat intake, we can drastically reduce the amount of damage done to the environment by the meat industry. Tracy and Ben are vegetarians and aspiring vegans, and Johnny has drastically reduced his meat consumption thanks to products from Impossible meats and Beyond meats and is an aspiring vegetarian.
 
 ![Home page](client/src/images/homepage.png)
+
+This is our home page. It has links to our saved page and about page. The navigation bar also contains links to sign up or log in or log out, depending on if you're already logged in or not.
+
+![Home page](Project-3\client\src\images\homepageCollapsible.png)
+
+This is how our collapsible looks once you click on it. It shows a recipe name, recipe picture, and lists the health labels, cautions, and ingredients. 
