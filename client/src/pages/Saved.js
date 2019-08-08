@@ -43,7 +43,7 @@ class Saved extends Component {
             </Jumbotron>
           </Col>
           
-          <Col size="md-12">
+          <Col size="md-4">
             {this.state.books.length ? (
                <List>
                 {this.state.books.map(book => (
@@ -56,8 +56,8 @@ class Saved extends Component {
                         <img
                           src={book.recipeImage} 
                           alt={book.recipeName} 
-                          height="450" 
-                          width="auto">
+                          height="auto" 
+                          width="300">
                         </img>
                       </a>                   
                       <br />
