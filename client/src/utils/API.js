@@ -19,4 +19,11 @@ export default {
   saveBook: function(bookData) {
     return axios.post('/api/books', bookData);
   }
+  // ,
+  // //get recipes by user
+  // getRecipes: function(userName) {
+  //   return axios.get('/api/books' + userName, {
+  //     headers: { Authorization: localStorage.getItem('token') }
+  //   });
+  // }
 };

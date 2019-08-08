@@ -61,7 +61,9 @@ class Saved extends Component {
                         </img>
                       </a>                   
                       <br />
-                      <span class="title">{book.recipeName}</span>
+                      <span className="title">{book.userName}</span>
+                      <br />
+                      <span className="title">{book.recipeName}</span>
                       </Collapsible>                 
                     </ListItem>
                 ))}
