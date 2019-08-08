@@ -34,9 +34,9 @@ This is the page where our users will log in.
 
 
 ## Roles
-Ben: API/Front end/routes
-Johnny: Mongo/Mongoose/Front end/API
-Tracy: JWT/Front end
+..* Ben: API/Front end/routes
+..* Johnny: Mongo/Mongoose/Front end/API
+..* Tracy: JWT/Front end
 
 ## Trello
 
