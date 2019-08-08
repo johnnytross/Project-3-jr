@@ -74,21 +74,22 @@ class Books extends Component {
   };
 
   savedRecipe = (i, recipe) => {
-    console.log(recipe)
+    //console.log(recipeList)
     const {recipeList} = this.state
     const payload = {
       userName: 'johnny', //TODO: grab email from JWT 
-      recipeName: recipe.label,
-      recipeLink: recipe.url,
-      recipeImage: recipe.image,
+      recipeName: recipe.recipe.label,
+      recipeLink: recipe.recipe.url,
+      recipeImage: recipe.recipe.image,
     }
+    //console.log(payload)
     API.saveBook(payload).then(res =>{
       console.log(res)
     }).catch(err => console.log(err));
-    // axios.post post request here with username and all other info needed for post route
-    // axios.post("/api/books", payload).then(res => {
-    //   console.log(res)
-    // })
+    // // axios.post post request here with username and all other info needed for post route
+    // // axios.post("/api/books", payload).then(res => {
+    // //   console.log(res)
+    // // })
     recipeList[i].isSaved = !recipeList[i].isSaved
     this.setState({recipeList})
   }
@@ -126,10 +127,10 @@ class Books extends Component {
                     <a href={rec.recipe.url} target='_blank' rel="noopener noreferrer">
                       <img
                         src={rec.recipe.image}
-                        height='450'
-                        width='auto'
                         alt={rec.recipe.label}
-                      />
+                        height="auto" 
+                        width="300"></img>
+                      
                     </a>
                     <br />
                     <span className='title'>
