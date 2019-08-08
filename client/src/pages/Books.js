@@ -77,12 +77,12 @@ class Books extends Component {
     //console.log(recipeList)
     const {recipeList} = this.state
     const payload = {
-      userName: 'johnny', //TODO: grab email from JWT 
+      userName: localStorage.getItem('email'),
       recipeName: recipe.recipe.label,
       recipeLink: recipe.recipe.url,
       recipeImage: recipe.recipe.image,
     }
-    //console.log(payload)
+    console.log(payload)
     API.saveBook(payload).then(res =>{
       console.log(res)
     }).catch(err => console.log(err));
