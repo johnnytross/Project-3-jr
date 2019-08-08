@@ -79,8 +79,8 @@ class Books extends Component {
     const payload = {
       userName: 'johnny', //TODO: grab email from JWT 
       recipeName: recipe.label,
-      recipeLink: "https://cookieandkate.com/vegan-mac-and-cheese-recipe/",
-      recipeImage:"https://cookieandkate.com/images/2017/06/best-vegan-mac-and-cheese-recipe-550x757.jpg",
+      recipeLink: recipe.url,
+      recipeImage: recipe.image,
     }
     API.saveBook(payload).then(res =>{
       console.log(res)
@@ -113,7 +113,6 @@ class Books extends Component {
               </form>
             </Jumbotron>
           </Col>
-          <Col size='md-3'></Col>
           <Col size='md-6'>
             {this.state.recipeList.length ? (
               <List>
@@ -136,17 +135,17 @@ class Books extends Component {
                     <span className='title'>
                       <h2>Health Label</h2>
                     </span>
-                    <span>{rec.recipe.healthLabels.join(" ")}</span>
+                    <span>{rec.recipe.healthLabels.join(", ")}</span>
                     <br />
                     <span className='title'>
                       <h2>Cautions</h2>
                     </span>
-                    <span>{rec.recipe.cautions.join(" ")}</span>
+                    <span>{rec.recipe.cautions.join(", ")}</span>
                     <br />
                     <span className='title'>
                       <h2>Ingredients</h2>
                     </span>
-                    <span>{rec.recipe.ingredientLines.join(" ")}</span>
+                    <span>{rec.recipe.ingredientLines.join(", ")}</span>
                     <br />
                     </Collapsible>
                   </ListItem>
