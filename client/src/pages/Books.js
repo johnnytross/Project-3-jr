@@ -81,6 +81,7 @@ class Books extends Component {
       recipeName: recipe.recipe.label,
       recipeLink: recipe.recipe.url,
       recipeImage: recipe.recipe.image,
+      recipeHealth: recipe.recipe.healthLabels
     }
     console.log(payload)
     API.saveBook(payload).then(res =>{
