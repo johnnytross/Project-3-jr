@@ -6,10 +6,10 @@ const recipeSchema = new Schema({
   recipeName: { type: String, required: true },
   recipeLink: { type: String, required: true },
   recipeImage: { type: String, required: true }, 
-  // -- This code stops the app from saving new recipes
-  recipeHealth: { type: String, required: false },
-  recipeCautions: { type: String, required: false },
-  recipeIngredients: { type: String, required: false }
+  // // -- This code stops the app from saving new recipes
+  // recipeHealth: { type: String, required: false },
+  // recipeCautions: { type: String, required: false },
+  // recipeIngredients: { type: String, required: false }
 });
 
 const Recipe = mongoose.model("Recipe", recipeSchema);
